@@ -1,0 +1,97 @@
+<refentry id="package.encryption.crypt-hmac2.intro">
+ <refnamediv>
+  <refname>Introduction</refname>
+  <refpurpose>
+   Introduction to <classname>Crypt_HMAC2</classname>
+  </refpurpose>
+ </refnamediv>
+
+ <refsect1 id="package.encryption.crypt-hmac2.intro.overview">
+  <title>Overview</title>
+
+   <para>
+   <classname>Crypt_HMAC2</classname> implements the Key-Message Authentication Code
+   (HMAC) algorithm as defined in <ulink url="http://tools.ietf.org/html/rfc2104">RFC2104</ulink>. This is
+   a type of mechanism for authenticating messages using cryptographic
+   hash algorithms such as MD5, SHA1 or SHA256. It is not limited to
+   these three and can use any iterated hash algorithm. Generally a HMAC's
+   security is reliant on the underlying cryptographic hash algorithm.
+   </para>
+
+ </refsect1>
+ 
+ <refsect1 id="package.encryption.crypt-hmac2.intro.supported-cryptographic-hashes">
+  <title>Supported Cryptographic Hashes</title>
+
+   <para>
+   The <classname>Crypt_HMAC2</classname> class is easy to use. It
+   supports, at a minimum, MD5 and SHA1 as the cryptographic hash function
+   since these are always available to PHP5.
+   </para>
+   
+   <para>
+   The range of cryptographic hash algorithms is extended when either of the
+   hash or mhash extensions are enabled. This would, for example, allow for
+   SHA256 HMACs which are gaining in popular usage.
+   </para>
+
+ </refsect1>
+
+ <refsect1 id="package.encryption.crypt-hmac2.intro.examples">
+  <title>Examples</title>
+
+   <para>
+   All examples utilise a fairly arbitrary key which should not not be
+   considered secure. You can generate a secure key with a second party
+   using some other means, such as Diffie-Hellman Key Exchange.
+   </para>
+
+   <example>
+    <title>HMAC with SHA1</title>
+
+    <programlisting role="php">
+require_once "Crypt/HMAC2.php";
+
+$key = str_repeat("\xaa",80);
+$crypt = new Crypt_HMAC2($key, 'SHA1');
+$data = 'Test Using Larger Than Block-Size Key and Larger Than One Block-Size Data';
+$hmac = $crypt->hash($data); // e8e99d0f45237d786d6bbaa7965c7808bbff1a91
+    </programlisting>
+
+   </example>
+
+      <example>
+    <title>HMAC with RIPEMD160</title>
+
+    <programlisting role="php">
+require_once "Crypt/HMAC2.php";
+
+$key = str_repeat("\x0b", 20);
+$crypt = new Crypt_HMAC2($key, 'RIPEMD160');
+$data = 'Hi There';
+$hmac = $crypt->hash($data); // 24cb4bd67d20fc1a5d2ed7732dcc39377f0a5668
+    </programlisting>
+
+   </example>
+
+ </refsect1>
+</refentry>
+<!-- Keep this comment at the end of the file
+Local variables:
+mode: sgml
+sgml-omittag:t
+sgml-shorttag:t
+sgml-minimize-attributes:nil
+sgml-always-quote-attributes:t
+sgml-indent-step:1
+sgml-indent-data:t
+sgml-parent-document:nil
+sgml-default-dtd-file:"../../../../manual.ced"
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+vim600: syn=xml fen fdm=syntax fdl=2 si
+vim: et tw=78 syn=sgml
+vi: ts=1 sw=1
+--> 
