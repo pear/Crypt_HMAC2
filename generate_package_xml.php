@@ -2,15 +2,12 @@
 require_once('PEAR/PackageFileManager2.php');
 PEAR::setErrorHandling(PEAR_ERROR_DIE);
 
-$packagefile = './package.xml';
-
 $options = array(
     'filelistgenerator' => 'cvs',
     'changelogoldtonew' => false,
     'simpleoutput'      => true,
-    'baseinstalldir'    => '/',
-    'packagedirectory'  => './',
-    'packagefile'       => $packagefile,
+    'baseinstalldir'    => 'Crypt',
+    'packagedirectory'  => dirname(__FILE__),
     'clearcontents'     => true,
     'ignore'            => array('generate_package_xml.php', '.svn', '.cvs*'),
     'dir_roles'         => array(
@@ -30,9 +27,7 @@ $packagexml->setDescription("Implementation of Hashed Message Authentication Cod
 $packagexml->setChannel('pear.php.net');
 
 $notes = <<<EOT
-* Initial release!
-* Updated tests location inside directory hierarchy for easier running
-* Incorporates all proposal comments or conditional notes
+* Fixed base directory path bug in package.xml
 EOT;
 $packagexml->setNotes($notes);
 
@@ -46,8 +41,8 @@ $packagexml->setLicense('New BSD License', 'http://opensource.org/licenses/bsd-l
 $packagexml->addRelease();
 $packagexml->generateContents();
 
-$packagexml->setAPIVersion('0.2.0');
-$packagexml->setReleaseVersion('0.2.0');
+$packagexml->setAPIVersion('0.2.1');
+$packagexml->setReleaseVersion('0.2.1');
 $packagexml->setReleaseStability('beta');
 $packagexml->setAPIStability('beta');
 

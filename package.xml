@@ -16,22 +16,20 @@ implemented MD5 and SHA1.</description>
   <email>padraic@php.net</email>
   <active>yes</active>
  </lead>
- <date>2007-09-29</date>
- <time>15:39:08</time>
+ <date>2007-09-30</date>
+ <time>13:31:58</time>
  <version>
-  <release>0.2.0</release>
-  <api>0.2.0</api>
+  <release>0.2.1</release>
+  <api>0.2.1</api>
  </version>
  <stability>
   <release>beta</release>
   <api>beta</api>
  </stability>
  <license uri="http://opensource.org/licenses/bsd-license.php">New BSD License</license>
- <notes>* Initial release!
-* Updated tests location inside directory hierarchy for easier running
-* Incorporates all proposal comments or conditional notes</notes>
+ <notes>* Fixed base directory path bug in package.xml</notes>
  <contents>
-  <dir baseinstalldir="/" name="/">
+  <dir baseinstalldir="Crypt" name="/">
    <dir name="docs">
     <file name="intro.xml" role="doc" />
    </dir> <!-- /docs -->
@@ -66,18 +64,16 @@ implemented MD5 and SHA1.</description>
  <changelog>
   <release>
    <version>
-    <release>0.2.0</release>
-    <api>0.2.0</api>
+    <release>0.2.1</release>
+    <api>0.2.1</api>
    </version>
    <stability>
     <release>beta</release>
     <api>beta</api>
    </stability>
-   <date>2007-09-29</date>
+   <date>2007-09-30</date>
    <license uri="http://opensource.org/licenses/bsd-license.php">New BSD License</license>
-   <notes>* Initial release!
-* Updated tests location inside directory hierarchy for easier running
-* Incorporates all proposal comments or conditional notes</notes>
+   <notes>* Fixed base directory path bug in package.xml</notes>
   </release>
  </changelog>
 </package>
