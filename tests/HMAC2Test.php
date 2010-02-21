@@ -1,6 +1,6 @@
 <?php
 
-require_once 'HMAC2.php';
+require_once 'Crypt/HMAC2.php';
 require_once 'PHPUnit/Framework/TestCase.php';
 
 /**
