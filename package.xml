@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package packagerversion="1.6.2" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
-    http://pear.php.net/dtd/tasks-1.0.xsd
-    http://pear.php.net/dtd/package-2.0
-    http://pear.php.net/dtd/package-2.0.xsd">
+<package packagerversion="1.9.0" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0     http://pear.php.net/dtd/tasks-1.0.xsd     http://pear.php.net/dtd/package-2.0     http://pear.php.net/dtd/package-2.0.xsd">
  <name>Crypt_HMAC2</name>
  <channel>pear.php.net</channel>
  <summary>Implementation of Hashed Message Authentication Code for PHP5</summary>
@@ -16,34 +13,32 @@ implemented MD5 and SHA1.</description>
   <email>padraic@php.net</email>
   <active>yes</active>
  </lead>
- <date>2007-09-30</date>
- <time>13:31:58</time>
+ <date>2010-02-21</date>
+ <time>23:57:37</time>
  <version>
-  <release>0.2.1</release>
-  <api>0.2.1</api>
+  <release>1.0.0</release>
+  <api>1.0.0</api>
  </version>
  <stability>
-  <release>beta</release>
-  <api>beta</api>
+  <release>stable</release>
+  <api>stable</api>
  </stability>
  <license uri="http://opensource.org/licenses/bsd-license.php">New BSD License</license>
- <notes>* Fixed base directory path bug in package.xml</notes>
+ <notes>
+QA release
+Fixed unit tests
+ </notes>
  <contents>
-  <dir baseinstalldir="Crypt" name="/">
-   <dir name="docs">
-    <file name="intro.xml" role="doc" />
-   </dir> <!-- /docs -->
-   <dir name="HMAC2">
-    <file name="Exception.php" role="php" />
-   </dir> <!-- /HMAC2 -->
-   <dir name="tests">
-    <file name="AllTests.php" role="test" />
-    <file name="HMAC2Test.php" role="test" />
-    <file name="TestConfiguration.php.dist" role="test" />
-    <file name="TestHelper.php" role="test" />
-   </dir> <!-- /tests -->
-   <file name="HMAC2.php" role="php" />
-  </dir> <!-- / -->
+  <dir baseinstalldir="/" name="/">
+   <file baseinstalldir="/" md5sum="8f86f851936b9f67663db789457e31bf" name="Crypt/HMAC2.php" role="php" />
+   <file baseinstalldir="/" md5sum="0b874d16c7476f0ef36beb70b204a1a6" name="Crypt/HMAC2/Exception.php" role="php" />
+   <file baseinstalldir="/" md5sum="4b6bf015e91af5c19596deb60f39a2ca" name="docs/intro.xml" role="doc" />
+   <file baseinstalldir="/" md5sum="e696b7d27324147fe58b41121fa1b76f" name="tests/AllTests.php" role="test" />
+   <file baseinstalldir="/" md5sum="0c3522fe80d72daa00fd359868eed252" name="tests/HMAC2Test.php" role="test" />
+   <file baseinstalldir="/" md5sum="b39889db5358a2a1dbe2dcd4f212be67" name="tests/TestConfiguration.php.dist" role="test" />
+   <file baseinstalldir="/" md5sum="2905836b0402bd79dbc8a54202aa133f" name="tests/TestHelper.php" role="test" />
+   <file baseinstalldir="/" md5sum="17fac2925dc2205d322f9ad965fb4330" name="generate_package_xml.php" role="php" />
+  </dir>
  </contents>
  <dependencies>
   <required>
@@ -73,7 +68,25 @@ implemented MD5 and SHA1.</description>
    </stability>
    <date>2007-09-30</date>
    <license uri="http://opensource.org/licenses/bsd-license.php">New BSD License</license>
-   <notes>* Fixed base directory path bug in package.xml</notes>
+   <notes>
+* Fixed base directory path bug in package.xml
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>1.0.0</release>
+    <api>1.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2010-02-21</date>
+   <license uri="http://opensource.org/licenses/bsd-license.php">New BSD License</license>
+   <notes>
+QA release
+Fixed unit tests
+   </notes>
   </release>
  </changelog>
 </package>
