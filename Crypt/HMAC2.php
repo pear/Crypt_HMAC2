@@ -44,6 +44,11 @@
  */
 
 /**
+ * Exception thrown when an invalid or unavaiable hash algorithm is used.
+ */
+require_once 'Crypt/HMAC2/InvalidAlgorithmException.php';
+
+/**
  * Crypt_HMAC2 class
  *
  * Example usage:
@@ -188,13 +193,18 @@ class Crypt_HMAC2
      *
      * @param string $hash
      * @return Crypt_HMAC2
+     *
+     * @throws Crypt_HMAC2_InvalidAlgorithmException if the provided hash
+     *         algorithm is invalid or unavailable.
      */
     public function setHashAlgorithm($hash)
     {
         if (!isset($hash) || empty($hash)) {
-            require_once 'Crypt/HMAC2/Exception.php';
-            throw new Crypt_HMAC2_Exception('provided hash string is null or empty');
+            throw new Crypt_HMAC2_InvalidAlgorithmException(
+                'The provided hash string is null or empty.'
+            );
         }
+
         $hash = strtolower($hash);
         $hashSupported = false;
         if (function_exists('hash_algos') && in_array($hash, hash_algos())) {
@@ -207,10 +217,16 @@ class Crypt_HMAC2
             $this->_packFormat = $this->_hashPackFormats[$hash];
             $hashSupported = true;
         }
+
         if ($hashSupported === false) {
-            require_once 'Crypt/HMAC2/Exception.php';
-            throw new Crypt_HMAC2_Exception('hash algorithm provided is not supported on this PHP instance; please enable the hash or mhash extensions');
+            throw new Crypt_HMAC2_InvalidAlgorithmException(
+                'The hash algorithm provided is not supported on this PHP ' .
+                'instance; please enable the hash or mhash extensions',
+                0,
+                $hash
+            );
         }
+
         $this->_hashAlgorithm = $hash;
         return $this;
     }
