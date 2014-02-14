@@ -19,5 +19,6 @@
 		"psr-0": {
 			"Crypt_HMAC2" : ""
 		}
-	}
+	},
+	"include-path": ["./"]
 }
