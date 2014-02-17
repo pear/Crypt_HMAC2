@@ -16,11 +16,12 @@
     ],
     "require": {
         "php": ">=5.0.0",
-        "pear/pear_exception": "*"
+        "pear/pear_exception": "*",
+        "pear/pear": "*"
     },
     "autoload": {
         "psr-0": {
-            "Crypt_HMAC2": ""
+            "Crypt": "./"
         }
     },
     "include-path": [
