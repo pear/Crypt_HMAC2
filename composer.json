@@ -1,24 +1,36 @@
 {
-	"name"        : "pear/crypt_hmac2",
-	"description" : "Implementation of Hashed Message Authentication Code for PHP5.",
-	"type"        : "library",
-	"keywords"    : [ "hmac", "hash" ],
-	"homepage"    : "https://github.com/pear/Crypt_HMAC2",
-	"license"     : "BSD-3-Clause",
-	"authors"     : [
-		{
-			"name"  : "Pádraic Brady",
-			"email" : "padraic@php.net"
-		}
-	],
-	"require"     : {
-		"php"                 : ">=5.0.0",
-		"pear/pear_exception" : "*"
-	},
-	"autoload": {
-		"psr-0": {
-			"Crypt_HMAC2" : ""
-		}
-	},
-	"include-path": ["./"]
+    "name": "pear/crypt_hmac2",
+    "description": "Implementation of Hashed Message Authentication Code for PHP5.",
+    "type": "library",
+    "keywords": [
+        "hmac",
+        "hash"
+    ],
+    "homepage": "https://github.com/pear/Crypt_HMAC2",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "P\u00e1draic Brady",
+            "email": "padraic@php.net"
+        }
+    ],
+    "require": {
+        "php": ">=5.0.0",
+        "pear/pear_exception": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Crypt_HMAC2": ""
+        }
+    },
+    "include-path": [
+        "./"
+    ],
+    "support": {
+        "issues": "http://pear.php.net/bugs/search.php?cmd=display&package_name[]=Crypt_HMAC2",
+        "source": "https://github.com/pear/Crypt_HMAC2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    }
 }
