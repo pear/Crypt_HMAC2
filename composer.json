@@ -7,7 +7,7 @@
         "hash"
     ],
     "homepage": "https://github.com/pear/Crypt_HMAC2",
-    "license": "BSD-3-Clause",
+    "license": "BSD-2-Clause",
     "authors": [
         {
             "name": "P\u00e1draic Brady",
@@ -16,8 +16,7 @@
     ],
     "require": {
         "php": ">=5.0.0",
-        "pear/pear_exception": "*",
-        "pear/pear": "*"
+        "pear/pear_exception": "*"
     },
     "autoload": {
         "psr-0": {
